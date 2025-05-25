@@ -1,0 +1,15 @@
+print('1]\tMath opeerations: ')
+
+input('Type \'Start\'==> ')
+
+print('2+2', 2+2, sep='=', end='!\n')
+print('2-2', 2-2, sep='=', end='!\n')
+print('2*2', 2*2, sep='=', end='!\n')
+print('2/2', 2/2, sep='=', end='!\n')
+print('2%2', 2%2, sep='=', end='!\n')
+print('2**2', 2**2, sep='=', end='!\n')
+print('min([1, 2, 0, 5, -6])', min([1, 2, 0, 5, -6]), sep='=', end='!\n')
+print('max([1, 2, 0, 5, -6])', max([1, 2, 0, 5, -6]), sep='=', end='!\n')
+print('abs(-56)', abs(-56), sep='=', end='!\n')
+print('pow(2, 4)', pow(2, 4), sep='=', end='!\n')
+print('round(4.65)', round(4.65), sep='=', end='!\n')
