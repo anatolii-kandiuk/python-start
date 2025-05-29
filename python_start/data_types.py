@@ -62,11 +62,21 @@ Task: calculate the distance
 How much fuel did the car use?
 What is the remaining fuel if the tank was full (60 l)?
 """
-print('\n2] Simple vehicle telemetry ')
+print('\n2] Simple vehicle telemetry')
 
-speed = 90
-time = 2.5
-fuel_rate = 8.5
+speed = 90  
+time = 2.5  
+fuel_rate = 8.5  
+tank_capacity = 60
+
+distance = speed * time 
+fuel_used = (fuel_rate / 100) * distance 
+fuel_remaining = tank_capacity - fuel_used 
+
+print("speed = 90 \ntime = 2.5 \nfuel_rate = 8.5 \ntank_capacity = 60 \n")
+print("How much fuel did the car use?", fuel_used, sep=' |==> ')
+print("What is the remaining fuel if the tank was full (60 l)?", fuel_remaining, sep=' |==> ')
+
 
 ###### Task 3 (complex): Parking lot
 """
@@ -80,3 +90,19 @@ Description:
 Input: number of hours and time of day (day/night)
 """
 print('\n3] Parking lot ')
+
+hours = int(input("Count of hours? "))
+time_of_day = input("Day or night (D/N): ").strip().upper()
+
+first_2_hours_rate = 20
+after_2_hours_rate = 15
+
+if hours <= 2:
+    cost = hours * first_2_hours_rate
+else:
+    cost = 2 * first_2_hours_rate + (hours - 2) * after_2_hours_rate
+
+if time_of_day == 'N':
+    cost *= 0.5
+
+print("Result: ", round(cost, 2), "UAH")
