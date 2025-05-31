@@ -1,10 +1,24 @@
+import math
+
 """
 Задача 1: Автомобільний пробіг
 
 Опис:
 Водій щодня їздить 100 км. Порахуй, скільки днів потрібно, щоб проїхати відстань, введену користувачем (наприклад, 750 км), використовуючи while.
 """
+distance = float(input('Type the distance (km): '))
+day_count = 0
 
+while distance > 0:
+    day_count += 1
+    distance -= 100
+
+print("Потрібно днів:", day_count)
+
+# PRO Option to solve
+distance = float(input("Type the distance (km): "))
+day_count = math.ceil(distance / 100)
+print("Потрібно днів:", day_count)
 
 
 """
