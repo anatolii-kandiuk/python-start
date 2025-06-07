@@ -84,6 +84,37 @@ populations = [3_600_000, 2_100_000, 3_200_000, 2_870_000, 1_900_000, 1_790_000]
 """
 ###
 
+cities = ["Berlin", "Paris", "Madrid", "Rome", "Vienna", "Warsaw"]
+populations = [3_600_000, 2_100_000, 3_200_000, 2_870_000, 1_900_000, 1_790_000]
+
+large_cities = []
+large_populations = []
+
+for city, population in zip(cities, populations):
+    if population > 2_500_000:
+        large_cities.append(city)
+        large_populations.append(population)
+
+sorted_cities = []
+sorted_populations = []
+
+while large_populations:
+    max_index = large_populations.index(max(large_populations))
+    
+    sorted_cities.append(large_cities[max_index])
+    sorted_populations.append(large_populations[max_index])
+    
+    large_cities.pop(max_index)
+    large_populations.pop(max_index)
+
+print("1-2) Міста з населенням понад 2.5 млн (за спаданням):")
+for i in range(len(sorted_cities)):
+    print(f"   - {sorted_cities[i]}: {sorted_populations[i]} мешканців")
+
+total_population = sum(sorted_populations)
+print("\n3) Загальна кількість населення цих міст:", total_population)
+
+
 """
 Задача 2: Історичні події та роки
 
