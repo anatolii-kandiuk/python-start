@@ -135,6 +135,40 @@ events = [
     Виведи список подій у хронологічному порядку.
 """
 ###
+events = [
+    ["Падіння Берлінської стіни", 1989],
+    ["Місяцева місія Apollo 11", 1969],
+    ["Друга світова війна закінчилася", 1945],
+    ["Заснування ЄС", 1993],
+    ["Перша Олімпіада", -776]
+]
+
+events.append(["Заснування Києва", 482])
+events.append(["Проголошення незалежності України", 1991])
+
+print("\nПодії XX століття:")
+for event in events:
+    if 1901 <= event[1] <= 2000:
+        print(f"{event[0]} — {event[1]}")
+
+unsorted_events = events[:]
+sorted_events = []
+
+while unsorted_events:
+    earliest_year = unsorted_events[0][1]
+    index_of_earliest = 0
+
+    for i in range(1, len(unsorted_events)):
+        if unsorted_events[i][1] < earliest_year:
+            earliest_year = unsorted_events[i][1]
+            index_of_earliest = i
+
+    sorted_events.append(unsorted_events[index_of_earliest])
+    unsorted_events.pop(index_of_earliest)
+
+print("\nВсі події у хронологічному порядку:")
+for event in sorted_events:
+    print(f"{event[0]} — {event[1]}")
 
 """
 Задача 3: Аналіз даних про населення
