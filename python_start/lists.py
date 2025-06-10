@@ -143,8 +143,19 @@ events = [
     ["Перша Олімпіада", -776]
 ]
 
-events.append(["Заснування Києва", 482])
-events.append(["Проголошення незалежності України", 1991])
+is_event = input("\nВи б хотіли ввести свою подію ? (y/n) | ==> ")
+
+while is_event == 'y':
+
+    event_name = input('Введіть назву події: ')
+    event_year = int(input('Введіть рік події: '))
+
+    events.append([event_name, event_year])
+
+    is_event = input("Ви б хотіли ввести ще одну подію ? (y/n) | ==> ")
+
+# events.append(["Заснування Києва", 482])
+# events.append(["Проголошення незалежності України", 1991])
 
 print("\nПодії XX століття:")
 for event in events:
@@ -187,8 +198,22 @@ population = [83, 67, 38, 60, 37]
     Виведи список країн, де населення вище середнього.
 
 """
-
 ###
+countries = ["Germany", "France", "Poland", "Italy", "Ukraine"]
+populations = [83, 67, 38, 60, 37]
+
+max_population_index = populations.index(max(populations))
+min_population_index = populations.index(min(populations))
+
+avg_populations = sum(populations) / len(populations)
+
+print(f'\nКраїна з найменшим {countries[min_population_index]} - {populations[min_population_index]} і \nнайбільшим {countries[max_population_index]} - {populations[max_population_index]} населенням.')
+print(f'Середнє населення: {avg_populations}')
+
+print(f'Список країн, де населення вище середнього.')
+for country, population in zip(countries, populations):
+    if population > avg_populations:
+        print(' ', country)
 
 """
 Задача 4 (математична): Вивід простих чисел
