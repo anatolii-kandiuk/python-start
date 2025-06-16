@@ -228,6 +228,24 @@ for country, population in zip(countries, populations):
 """
 
 ###
+numbers = list(range(2, 101))
+prime_numbers = []
+
+for number in numbers:
+    is_prime = True 
+
+    for divisor in range(2, number):
+        if number % divisor == 0: 
+            is_prime = False 
+            break 
+    
+    if is_prime:
+        prime_numbers.append(number)
+
+print(f'\nКількість простих чисел: {len(prime_numbers)}')
+print('Прості числа від 2 до 100:')
+print(prime_numbers)
+
 
 """
 Домашнє завдання (інтегроване)
