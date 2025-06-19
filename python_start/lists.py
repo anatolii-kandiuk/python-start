@@ -260,3 +260,19 @@ print(prime_numbers)
 
     Реалізуй перевірку — якщо слова немає, вивести повідомлення: "Немає у словнику!"
 """
+
+de_words = ['Hallo', 'der Apfel', 'der Mann']
+ua_words = ['привіт', 'яблуко', 'чоловік']
+
+while True:
+    ua_word_input = input('Geben Sie das ukrainische Wort ein (oder "exit" zum Beenden): ').lower()
+
+    if ua_word_input == 'exit':
+        print('Auf Wiedersehen!')
+        break
+
+    if ua_word_input in [word.lower() for word in ua_words]:
+        ua_word_index = [word.lower() for word in ua_words].index(ua_word_input)
+        print(f'{ua_words[ua_word_index]} => {de_words[ua_word_index]}')
+    else:
+        print('Dieses Wort ist nicht im Wörterbuch!')
