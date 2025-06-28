@@ -8,6 +8,7 @@
 ✔ Закріплюємо: цикл for, індекси, метод lower()
 """
 ###
+print('\n[TASK 1]\n')
 
 user_msg = input("Type the text |=> ")
 vowels = [
@@ -38,6 +39,8 @@ cities = "Berlin, Paris, Rome, Warsaw, Madrid"
 ✔ Виведи всі міста з великої букви, навіть якщо у списку вони написані з маленької.
 """
 ###
+print('\n[TASK 2]\n')
+
 cities = "Berlin, Paris, rome, warsaw, Madrid"
 cities_list = cities.split(', ')
 longest_city = ""
@@ -65,6 +68,8 @@ text = "Die Geschichte Europas ist sehr vielfältig und spannend."
 ✔ Підрахуй кількість літер e у всьому тексті.
 """
 ###
+print('\n[TASK 3]\n')
+
 text = "Die Geschichte Europas ist sehr vielfältig und spannend."
 
 print(text[:15])
@@ -80,6 +85,7 @@ print(f'Count of E in [{text}]: {sum(1 for letter in text if letter.lower() == "
 
 ✔ Використовуй зрізи для перевірки.
 """
+print('\n[TASK 4]\n')
 
 user_word = input('Type the word: ').lower().replace(" ", "")
 
@@ -102,8 +108,27 @@ else:
 📌 Порада: використай .lower(), .count() і цикл по set().
 """
 ###
+print('\n[TASK 5]\n')
+user_msg = input('Type the text: ')
+alpha_msg = ''
 
+for symbol in user_msg:
+    if symbol.isalpha():
+        alpha_msg += symbol.lower()
 
+print(f'1) Alpha Messge: {alpha_msg}')
+
+max_letter = ''
+max_count = 0
+
+for letter in set(alpha_msg):
+    count = alpha_msg.count(letter)
+
+    if count > max_count:
+        max_count = count
+        max_letter = letter
+
+print(f'2) Max count of letters: {max_letter} = {max_count}')
 
 """
 🧮 Задача 6 (математична): Цифри у тексті
