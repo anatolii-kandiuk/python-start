@@ -146,6 +146,18 @@ print(f'2) Max count of letters: {max_letter} = {max_count}')
 📌 Порада: символ — це цифра, якщо char.isdigit() повертає True.
 """
 
+print('\nTASK 6\n')
+
+text = input("Введи текст із цифрами: ")
+digits = [] 
+
+for char in text:
+    if char.isdigit():
+        digits.append(int(char))  
+
+print("Знайдені цифри:", digits)
+print("Сума цифр:", sum(digits))
+
 """
 🧬 Задача 7 (програмістська): Перевірка змінної
 
