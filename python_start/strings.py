@@ -173,6 +173,23 @@ print("Сума цифр:", sum(digits))
 
 📌 Порада: ключові слова можна отримати з модуля keyword:
 """
+import keyword
+import string
+
+print('\nTASK 7\n')
+
+type_var = input("Введи назву змінної: ")
+allowed_chars = string.ascii_letters + string.digits + "_"
+
+if type_var[0].isdigit():
+    print('!!! Починається з цифри')
+
+if any(char not in allowed_chars for char in type_var):
+    print('!!! Містить символи не підходящі для назви')
+
+if keyword.iskeyword(type_var):
+    print('!!! Є ключовим слововм')
+
 
 """
 🌐 Задача 8 (географічна): Стандартизація назв міст
@@ -185,3 +202,15 @@ cities = ["Berlin", "kIEv", "Wien", "paris", "MADRID"]
 
     Виведи міста, які починаються на голосну (A, E, I, O, U).
 """
+
+print('\nTASK 8\n')
+
+vowels = "AEIOUÄÖÜ"
+cities = ["Berlin", "kIEv", "Wien", "paris", "MADRID", "ulm"]
+
+correct_cities = [city.strip().lower().title() for city in cities]
+
+vowel_cities = [city for city in correct_cities if city[0].upper() in vowels]
+
+print(correct_cities)
+print(vowel_cities)
